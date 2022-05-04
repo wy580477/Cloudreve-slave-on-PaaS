@@ -1,6 +1,6 @@
 {
-	"name": "Cloudreve-slave-for-Heroku",
-	"description": "Deploy Cloudreve on Heroku.",
+	"name": "Cloudreve-slave-on-Heroku",
+	"description": "Deploy Cloudreve slave instance on Heroku.",
 	"env": {
 		"Secret": {
 			"description": "通信密钥, 从Cloudreve主机添加节点设置向导处获取。",
