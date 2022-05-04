@@ -24,6 +24,7 @@
  7. Heroku完成部署后，将Heroku APP域名填入从机地址，Aria2 RPC服务地址为http://127.0.0.1:6800 ，RPC密钥为空白。
  8. HEROKU_API_KEY, HEROKU_APP_NAME, HEROKU_RESTART_TIME三个变量用于固定Heroku dyno重启时间。Heroku的重启周期是24-27小时左右，这三项变量设置好以后可以把Heroku dyno重启周期固定到24小时，避免出现随机重启的情况。
  9. 仓库content目录下，conf.ini为Cloudreve设置文件，aria2.conf为aria2设置文件，tracker.sh用于每次dyno启动时自动更新BT tracker。
+ 10. 每次部署会下载Cloudreve最新版本。
 
 
 
