@@ -12,4 +12,4 @@ sed -i "s|PORT|${PORT}|g;s|SECRET|${Secret}|g" /workdir/conf.ini
 sv start aria2 || exit 1
 sv start redis || exit 1
 exec 2>&1
-exec cloudreve -c /workdir/conf.ini
+exec /cloudreve/cloudreve -c /workdir/conf.ini
