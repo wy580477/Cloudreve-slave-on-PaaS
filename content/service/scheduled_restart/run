@@ -1,0 +1,12 @@
+#!/bin/sh
+
+sleep 55
+
+DATE=$(date +%H%M | sed 's/^0//g')
+RESTART_TIME=$(echo ${HEROKU_RESTART_TIME/:/} | sed 's/^0//g')
+if [[ "${DATE}" = "${RESTART_TIME}" ]] && [[ "${HEROKU_API_KEY}" != "" ]]; then
+    curl -n -X DELETE https://api.heroku.com/apps/"${HEROKU_APP_NAME}"/dynos \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/vnd.heroku+json; version=3" \
+    -H "Authorization: Bearer "${HEROKU_API_KEY}""
+fi

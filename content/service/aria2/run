@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Dummy run for building image
+if [ "${MODE}" = "build" ]; then
+	sleep infinity
+fi
+
+# Configure aria2
+touch /workdir/aria2.session
+/workdir/tracker.sh /workdir/aria2.conf
+
+# Run aria2
+exec 2>&1
+exec aria2c --conf-path="/workdir/aria2.conf" --enable-rpc

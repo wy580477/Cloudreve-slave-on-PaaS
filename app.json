@@ -1,0 +1,27 @@
+{
+	"name": "Cloudreve-slave-for-Heroku",
+	"description": "Deploy Cloudreve on Heroku.",
+	"env": {
+		"Secret": {
+			"description": "通信密钥, 从Cloudreve主机添加节点设置向导处获取。",
+			"value": "1234567891234567123456789123456712345"
+		},
+		"HEROKU_APP_NAME": {
+			"description": "Heroku App名称, 可选项, 用于指定dyno重启时间。",
+			"value": "1234567891234567123456789123456712345"
+		},
+		"HEROKU_API_KEY": {
+			"description": "Heroku账号API密钥, 可选项, 用于指定dyno重启时间。可从Heroku账号面板处获得, 也可以用heroku cli命令heroku authorizations:create创建。",
+			"value": "1234567891234567123456789123456712345"
+		},
+		"HEROKU_RESTART_TIME": {
+			"description": "指定指定dyno重启时间, 可选项。需要HEROKU_APP_NAME和HEROKU_RESTART_TIME变量配合。格式为6:00, 24小时制, 时区为TZ变量所指定的时区。",
+			"value": "1234567891234567123456789123456712345"
+		},
+		"TZ": {
+			"description": "时区",
+			"value": "Asia/Shanghai"
+		}
+	},
+	"stack": "container"
+}

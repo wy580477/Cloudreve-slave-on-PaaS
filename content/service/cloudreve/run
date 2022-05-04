@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Dummy run for building image
+if [ "${MODE}" = "build" ]; then
+	sleep infinity
+fi
+
+# Configure Cloudreve
+sed -i "s|PORT|${PORT}|g;s|SECRET|${Secret}|g" /workdir/conf.ini
+
+# Run cloudreve
+sv start aria2 || exit 1
+sv start redis || exit 1
+exec 2>&1
+exec cloudreve -c /workdir/conf.ini

@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  push:
+    tags: [ 'v*.*.*' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: git pull https://github.com/wy580477/Cloudreveforme-Heroku
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          usedocker: true
+          env_file: ".env"
+        env:
+          HD_HEROKU_APP_NAME: ${{secrets.HEROKU_APP_NAME}}
+          HD_HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}}
