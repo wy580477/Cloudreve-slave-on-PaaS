@@ -1,10 +1,5 @@
 #!/bin/sh
 
-# Dummy run for building image
-if [ "${MODE}" = "build" ]; then
-	sleep infinity
-fi
-
 # Run redis
 exec 2>&1
 exec redis-server

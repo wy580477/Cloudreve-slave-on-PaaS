@@ -1,10 +1,5 @@
 #!/bin/sh
 
-# Dummy run for building image
-if [ "${MODE}" = "build" ]; then
-	sleep infinity
-fi
-
 # Configure Cloudreve
 sed -i "s|PORT|${PORT}|g;s|SECRET|${Secret}|g" /workdir/conf.ini
 
