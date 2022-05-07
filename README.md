@@ -27,7 +27,7 @@
  10. 每次部署会采用Cloudreve最新版本。
  
  ## Cloudflare Workers反代
-   **单双日交替使用不同dyno绕过Heroku非验证账号每月550小时限制**   
+   **单双日交替使用不同dyno绕过Heroku非信用卡验证账号每月550小时限制**   
    
    **可以解决国内部署的Cloudreve主机无法直接访问Heroku的问题**
    
