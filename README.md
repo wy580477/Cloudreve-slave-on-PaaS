@@ -31,7 +31,7 @@
    
    **可以解决国内部署的Cloudreve主机无法直接访问Heroku的问题**
    
-   - 单双日切换dyno绕过Heroku每个月550小时限制吗，需要两个Heroku账号分别部署使用相同从机密钥的dyno
+   - 单双日切换dyno绕过Heroku每个月550小时限制，需要两个Heroku账号分别部署使用相同从机密钥的dyno
    - 登陆cloudflare账号
    - 点击左侧导航栏workers，选择Create a Service
    - 创建service以后，点击Quick Edit
