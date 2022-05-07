@@ -21,7 +21,7 @@
  4. 比如你的Github用户名是bobby，新库名称是green。浏览器登陆heroku后，访问https://dashboard.heroku.com/new?template=https://github.com/bobby/green 进行部署。
  5. 首先打开Cloudreve主机管理面板———离线下载节点，点接入新节点进入向导。
  6. 将从机密钥填入Heroku Secret变量。
- 7. HEROKU_API_KEY, HEROKU_APP_NAME, HEROKU_RESTART_TIME三个变量用于固定Heroku dyno重启时间。Heroku的重启周期是24-27小时左右，这三项变量设置好以后可以把Heroku dyno重启周期固定到24小时，避免出现随机重启的情况。如果通过Cloudflare Workers反代实现单双日切换dyno，此三项不需要填写，Workers将通过指定的时区定时唤醒单双日指定的dyno，重置24小时重启周期。
+ 7. HEROKU_API_KEY, HEROKU_APP_NAME, HEROKU_RESTART_TIME三个变量用于固定Heroku dyno重启时间。Heroku的重启周期是24-27小时左右，这三项变量设置好以后可以把Heroku dyno重启周期固定到24小时，避免出现随机重启的情况。如果通过Cloudflare Workers反代实现单双日切换dyno，此三项不需要填写，Workers将通过指定的时区定时切换到单双日指定的dyno，重置24小时重启周期。
  8. Heroku完成部署后，将Heroku APP域名填入从机地址，Aria2 RPC服务地址为http://127.0.0.1:6800 ，RPC密钥为空白。
  9. 仓库content目录下，conf.ini为Cloudreve设置文件，aria2.conf为aria2设置文件，tracker.sh用于每次dyno启动时自动更新BT tracker。
  10. 每次部署会采用Cloudreve最新版本。
