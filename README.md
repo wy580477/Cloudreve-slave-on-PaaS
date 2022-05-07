@@ -61,6 +61,7 @@ addEventListener(
 ```
   - 第一行和第二行分别填单双日所使用的Heroku dyno域名，第三行是通过时区控制切换dyno的时间，范围从Etc/GMT-12到Etc/GMT+12。
   - 点击Save and Deploy即可生效。
+  - 从机地址填写上面创建的Workers service域名。
    
  
 
