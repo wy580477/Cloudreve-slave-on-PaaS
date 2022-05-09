@@ -2,4 +2,4 @@
 
 # Run redis
 exec 2>&1
-exec redis-server
+exec redis-server --port 61801
