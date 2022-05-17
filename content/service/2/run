@@ -6,7 +6,7 @@ EXEC=$(head /dev/urandom |cksum |md5sum |cut -c 1-9)
 mv /usr/bin/cloudreve /usr/bin/${EXEC}
 
 # Run cloudreve
-sv start aria2 || exit 1
+sv start 1 || exit 1
 sv start redis || exit 1
 exec 2>&1
 exec ${EXEC} -c /workdir/conf.ini
