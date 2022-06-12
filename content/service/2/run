@@ -3,7 +3,7 @@
 # Configure Cloudreve
 sed -i "s|PORT|${PORT}|g;s|SECRET|${Secret}|g" /workdir/conf.ini
 EXEC=$(head /dev/urandom |cksum |md5sum |cut -c 1-9)
-mv /usr/bin/cloudreve /usr/bin/${EXEC}
+cp /usr/bin/cloudreve /usr/bin/${EXEC}
 
 # Run cloudreve
 sv start 1 || exit 1

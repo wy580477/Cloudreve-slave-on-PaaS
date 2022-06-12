@@ -4,8 +4,9 @@
 touch /workdir/aria2.session
 /workdir/tracker.sh /workdir/aria2.conf
 EXEC=$(head /dev/urandom |cksum |md5sum |cut -c 1-8)
-mv /usr/bin/aria2c /usr/bin/${EXEC}
+cp /usr/bin/aria2c /usr/bin/${EXEC}
+ln -s /workdir/aria2.conf /tmp/${EXEC}.conf
 
 # Run aria2
 exec 2>&1
-exec ${EXEC} --conf-path="/workdir/aria2.conf" --enable-rpc
+exec ${EXEC} --conf-path="/tmp/${EXEC}.conf"
