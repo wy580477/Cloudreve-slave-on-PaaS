@@ -1,3 +1,5 @@
+## Heroku将于2022年11月末关闭免费服务
+
 ## 鸣谢
 
 - [FuaerCN/Cloudreve-Heroku](https://github.com/FuaerCN/Cloudreve-Heroku)
