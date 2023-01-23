@@ -56,13 +56,14 @@
  2. 在Fork出来的仓库页面上点击Setting，勾选Template repository。
  3. 然后点击Code返回之前的页面，点Setting下面新出现的按钮Use this template，起个随机名字创建新库。
  4. 仓库content目录下，conf.ini为Cloudreve设置文件，aria2.conf为aria2设置文件，可根据需要自行修改。tracker.sh用于每次容器启动时自动更新BT tracker。
- 5. 点击页面右侧 Create a new release，建立格式为 v0.1.0 的tag，其它内容随意，然后点击 Publish release。
- 6. 大概不到一分钟后，github action 构建容器镜像完成，点击页面右侧 Packages, 再点击进入刚生成的 Package。
- 7. 点击页面右侧 Package settings，在页面最下方点击 Change visibility，选择 public 并输入 package 名称以确认。
- 8. 容器镜像拉取地址在 package 页面 docker pull 命令示例中。
- 9. 首先打开Cloudreve主机管理面板———离线下载节点，点接入新节点进入向导。
- 10. 在PaaS部署过程中建立Secret环境变量，值为从机密钥。如果需要设置内部 HTTP 端口，默认为3000，也可以自行设置 PORT 变量修改。
- 11. 完成部署后，将PaaS平台提供的域名填入从机地址，Aria2 RPC服务地址为<http://127.0.0.1:61800> ，RPC密钥为空白。
+ 5. 点击仓库Settings > Actions > General，滚动到页面最下方，将Workflow permissions设置为Read and write permissions。
+ 6. 点击页面右侧 Create a new release，建立格式为 v0.1.0 的tag，其它内容随意，然后点击 Publish release。
+ 7. 大概不到一分钟后，github action 构建容器镜像完成，点击页面右侧 Packages, 再点击进入刚生成的 Package。
+ 8. 点击页面右侧 Package settings，在页面最下方点击 Change visibility，选择 public 并输入 package 名称以确认。
+ 9. 容器镜像拉取地址在 package 页面 docker pull 命令示例中。
+ 10. 首先打开Cloudreve主机管理面板———离线下载节点，点接入新节点进入向导。
+ 11. 在PaaS部署过程中建立Secret环境变量，值为从机密钥。如果需要设置内部 HTTP 端口，默认为3000，也可以自行设置 PORT 变量修改。
+ 12. 完成部署后，将PaaS平台提供的域名填入从机地址，Aria2 RPC服务地址为<http://127.0.0.1:61800> ，RPC密钥为空白。
 
   </details>
 
