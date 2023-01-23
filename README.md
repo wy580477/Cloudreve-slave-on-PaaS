@@ -32,7 +32,7 @@
  4. 仓库content目录下，conf.ini为Cloudreve设置文件，aria2.conf为aria2设置文件，可根据需要自行修改。tracker.sh用于每次dyno启动时自动更新BT tracker。
  5. 比如你的Github用户名是bobby，新库名称是green。浏览器登陆heroku后，访问<https://dashboard.heroku.com/new?template=https://github.com/bobby/green> 进行部署。
  6. 首先打开Cloudreve主机管理面板———离线下载节点，点接入新节点进入向导。
- 7. 将从机密钥填入Secret变量。NodeStatus_DSN变量可选。
+ 7. 将从机密钥填入Secret变量。NodeStatus_DSN环境变量可选，为探针服务端连接信息，不设置则为禁用。示例：wss://username:password@status.mydomain.com
  8. Heroku完成部署后，将Heroku APP域名填入从机地址，Aria2 RPC服务地址为<http://127.0.0.1:61800> ，RPC密钥为空白。
 
   </details>
