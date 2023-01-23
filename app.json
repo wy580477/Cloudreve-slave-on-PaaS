@@ -5,6 +5,10 @@
 		"Secret": {
 			"description": "通信密钥, 从Cloudreve主机添加节点设置向导处获取。",
 			"value": "1234567891234567123456789123456712345"
+		},
+		"NodeStatus_DSN": {
+			"description": "NodeStatus 探针服务端连接信息, 保持默认空值为禁用。示例: wss://username:password@status.mydomain.com",
+			"value": ""
 		}
 	},
 	"stack": "container"

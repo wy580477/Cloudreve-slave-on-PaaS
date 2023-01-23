@@ -14,6 +14,8 @@
 ## 概述
 
   本项目用于在支持Dockerfile或拉取容器镜像的PaaS服务上部署Cloudreve从机节点，集成Aria2离线下载功能。
+
+  集成 [NodeStatus](https://github.com/cokemine/nodestatus) 探针客户端。[NodeStatus 服务端](https://github.com/wy580477/NodeStatus-Docker)也可以部署在 PaaS 平台上。
   
   每次部署会采用Cloudreve最新版本。
   
@@ -30,7 +32,7 @@
  4. 仓库content目录下，conf.ini为Cloudreve设置文件，aria2.conf为aria2设置文件，可根据需要自行修改。tracker.sh用于每次dyno启动时自动更新BT tracker。
  5. 比如你的Github用户名是bobby，新库名称是green。浏览器登陆heroku后，访问<https://dashboard.heroku.com/new?template=https://github.com/bobby/green> 进行部署。
  6. 首先打开Cloudreve主机管理面板———离线下载节点，点接入新节点进入向导。
- 7. 将从机密钥填入Secret变量。
+ 7. 将从机密钥填入Secret变量。NodeStatus_DSN变量可选。
  8. Heroku完成部署后，将Heroku APP域名填入从机地址，Aria2 RPC服务地址为<http://127.0.0.1:61800> ，RPC密钥为空白。
 
   </details>
@@ -45,7 +47,8 @@
  5. 首先打开Cloudreve主机管理面板———离线下载节点，点接入新节点进入向导。
  6. 在PaaS平台管理面板中连接你新建立的github仓库，然后进行部署。
  7. 在PaaS部署过程中建立Secret环境变量，值为从机密钥。如果需要设置内部 HTTP 端口，默认为3000，也可以自行设置 PORT 变量修改。
- 8. 完成部署后，将PaaS平台提供的域名填入从机地址，Aria2 RPC服务地址为<http://127.0.0.1:61800> ，RPC密钥为空白。
+ 8. NodeStatus_DSN环境变量可选，为探针服务端连接信息，不设置则为禁用。示例：wss://username:password@status.mydomain.com
+ 9. 完成部署后，将PaaS平台提供的域名填入从机地址，Aria2 RPC服务地址为<http://127.0.0.1:61800> ，RPC密钥为空白。
 
   </details>
 
@@ -63,7 +66,8 @@
  9. 容器镜像拉取地址在 package 页面 docker pull 命令示例中。
  10. 首先打开Cloudreve主机管理面板———离线下载节点，点接入新节点进入向导。
  11. 在PaaS部署过程中建立Secret环境变量，值为从机密钥。如果需要设置内部 HTTP 端口，默认为3000，也可以自行设置 PORT 变量修改。
- 12. 完成部署后，将PaaS平台提供的域名填入从机地址，Aria2 RPC服务地址为<http://127.0.0.1:61800> ，RPC密钥为空白。
+ 12. NodeStatus_DSN环境变量可选，为探针服务端连接信息，不设置则为禁用。示例：wss://username:password@status.mydomain.com
+ 13. 完成部署后，将PaaS平台提供的域名填入从机地址，Aria2 RPC服务地址为<http://127.0.0.1:61800> ，RPC密钥为空白。
 
   </details>
 
