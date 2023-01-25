@@ -1,6 +1,14 @@
 #/bin/sh
 
 # Install Cloudreve
+if [ -f /workdir/*.tar.gz ]; then
+    tar -zxf /workdir/*.tar.gz -C /workdir
+    rm -f /workdir/*.tar.gz
+else
+    VERSION="$(curl -4 --retry 10 --retry-max-time 60 https://api.github.com/repos/cloudreve/Cloudreve/releases/latest | jq .tag_name | sed 's/\"//g')"
+    wget -4qO - https://github.com/cloudreve/Cloudreve/releases/download/${VERSION}/cloudreve_${VERSION}_linux_amd64.tar.gz | tar -zxf - -C /workdir
+fi
+
 VERSION="$(curl -4 --retry 10 --retry-max-time 60 https://api.github.com/repos/cloudreve/Cloudreve/releases/latest | jq .tag_name | sed 's/\"//g')"
 wget -4qO - https://github.com/cloudreve/Cloudreve/releases/download/${VERSION}/cloudreve_${VERSION}_linux_amd64.tar.gz | tar -zxf - -C /usr/bin
 
