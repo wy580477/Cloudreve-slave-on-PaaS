@@ -73,6 +73,6 @@
 
 ## Cloudflare Workers反代
 
-- https://github.com/wy580477/PaaS-Related/blob/main/CF_Workers_Reverse_Proxy_chs.md
+- https://github.com/wy580477/PaaS-Related/blob/main/CF_Workers_Reverse_Proxy_chs_simple.md
 - 从机地址填写上面创建的Workers service域名。
 - 国内workers.dev域名被阻断，可以使用Workers Route功能绑定自定义域名。
