@@ -2,7 +2,7 @@ FROM alpine:latest
 
 COPY ./content /workdir/
 
-RUN apk add --no-cache runit curl jq redis gcompat wget \
+RUN apk add --no-cache runit curl redis gcompat \
     && chmod +x /workdir/*.sh /workdir/service/*/run \
     && /workdir/install.sh \
     && rm /workdir/install.sh \
