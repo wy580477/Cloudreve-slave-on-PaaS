@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 # Install Cloudreve
 if [ -f /workdir/*.tar.gz ]; then
